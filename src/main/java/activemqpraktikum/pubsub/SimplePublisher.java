@@ -1,4 +1,4 @@
-package activemqpraktikum;
+package activemqpraktikum.pubsub;
 
 import javax.jms.*;
 

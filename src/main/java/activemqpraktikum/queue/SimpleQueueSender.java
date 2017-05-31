@@ -1,4 +1,4 @@
-package activemqpraktikum;
+package activemqpraktikum.queue;
 
 import javax.jms.*;
 

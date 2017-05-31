@@ -1,4 +1,4 @@
-package activemqpraktikum;
+package activemqpraktikum.queue;
 
 import javax.jms.*;
 
@@ -22,8 +22,11 @@ public class SimpleQueueAsyncReceiver extends SimpleQueueParticipant {
 				TextMessage message = (TextMessage) msg;
 				try {
 					String text = message.getText();
+					Thread.sleep(2000);
 					System.out.println("Reading message: " + text);
 				} catch (JMSException e) {
+					e.printStackTrace();
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}

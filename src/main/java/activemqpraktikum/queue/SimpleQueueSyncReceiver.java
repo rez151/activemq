@@ -1,4 +1,4 @@
-package activemqpraktikum;
+package activemqpraktikum.queue;
 
 import javax.jms.*;
 
@@ -9,13 +9,14 @@ public class SimpleQueueSyncReceiver extends SimpleQueueParticipant {
 		super(subject);
 	}
 
-	public void receive() throws JMSException {
+	public void receive() throws JMSException, InterruptedException {
 		QueueReceiver queueReceiver = queueSession.createReceiver(queue);
 		while (true) {
 			Message m = queueReceiver.receive();
 			if (m instanceof TextMessage) {
 				TextMessage message = (TextMessage) m;
 				String text = message.getText();
+				Thread.sleep(2000);
 				System.out.println("Reading message: " + text);
 			}
 		}

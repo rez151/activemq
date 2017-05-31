@@ -5,12 +5,12 @@ import javax.jms.*;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-class SimpleParticipant {
+public class SimpleParticipant {
 
 	protected ActiveMQConnectionFactory factory;
 	protected Session session;
 	
-	SimpleParticipant() throws JMSException {
+	public SimpleParticipant() throws JMSException {
 		String user = ActiveMQConnection.DEFAULT_USER;
 		String password = ActiveMQConnection.DEFAULT_PASSWORD;
 		String url = "tcp://192.168.162.128:61616";
