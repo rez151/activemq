@@ -14,6 +14,6 @@ class SimpleQueueParticipant extends SimpleParticipant {
 		QueueConnection queueConnection = factory
 				.createQueueConnection();
 		queueConnection.start();
-		queueSession = queueConnection.createQueueSession(false, Session.AUTO_ACKNOWLEDGE);
+		queueSession = queueConnection.createQueueSession(false, Session.CLIENT_ACKNOWLEDGE);
 	}
 }

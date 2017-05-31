@@ -24,6 +24,7 @@ public class SimpleQueueAsyncReceiver extends SimpleQueueParticipant {
 					String text = message.getText();
 					Thread.sleep(2000);
 					System.out.println("Reading message: " + text);
+					message.acknowledge();
 				} catch (JMSException e) {
 					e.printStackTrace();
 				} catch (InterruptedException e) {

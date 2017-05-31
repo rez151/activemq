@@ -18,6 +18,7 @@ public class SimpleQueueSyncReceiver extends SimpleQueueParticipant {
 				String text = message.getText();
 				Thread.sleep(2000);
 				System.out.println("Reading message: " + text);
+				message.acknowledge();
 			}
 		}
 	}
